@@ -96,10 +96,10 @@ app.get('/api/users/:_id/logs', async(req,res)=>{
   else{
     let dateObj = {}
     if(from){
-      dateObj['gte'] = new Date(from)
+      dateObj['$gte'] = new Date(from)
     }
     if(to){
-      dateObj['lte'] = new Date(to)
+      dateObj['$lte'] = new Date(to)
     }
     let filter = {
       user_id:id
